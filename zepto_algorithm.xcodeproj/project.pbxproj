@@ -1,0 +1,279 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C6B166741CCC0187002041DF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6B166731CCC0187002041DF /* main.cpp */; };
+		C6B166771CCC01A4002041DF /* a_makeHeap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6B166751CCC01A4002041DF /* a_makeHeap.cpp */; };
+		C6B1667D1CCC06DD002041DF /* b_heapSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C6B166641CCBF180002041DF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C6B166661CCBF180002041DF /* zepto_algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = zepto_algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6B166731CCC0187002041DF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C6B166751CCC01A4002041DF /* a_makeHeap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = a_makeHeap.cpp; path = src/1_Heap/a_makeHeap.cpp; sourceTree = "<group>"; };
+		C6B166761CCC01A4002041DF /* a_makeHeap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = a_makeHeap.h; path = src/1_Heap/a_makeHeap.h; sourceTree = "<group>"; };
+		C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = b_heapSort.cpp; path = src/1_Heap/b_heapSort.cpp; sourceTree = "<group>"; };
+		C6B1667C1CCC06DD002041DF /* b_heapSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = b_heapSort.h; path = src/1_Heap/b_heapSort.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C6B166631CCBF180002041DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C6B1665D1CCBF180002041DF = {
+			isa = PBXGroup;
+			children = (
+				C6B166731CCC0187002041DF /* main.cpp */,
+				C6B166791CCC01D2002041DF /* src */,
+				C6B166671CCBF180002041DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C6B166671CCBF180002041DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6B166661CCBF180002041DF /* zepto_algorithm */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6B166791CCC01D2002041DF /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C6B1667A1CCC01DB002041DF /* 1_Heap */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		C6B1667A1CCC01DB002041DF /* 1_Heap */ = {
+			isa = PBXGroup;
+			children = (
+				C6B166751CCC01A4002041DF /* a_makeHeap.cpp */,
+				C6B166761CCC01A4002041DF /* a_makeHeap.h */,
+				C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */,
+				C6B1667C1CCC06DD002041DF /* b_heapSort.h */,
+			);
+			name = 1_Heap;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C6B166651CCBF180002041DF /* zepto_algorithm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6B1666D1CCBF180002041DF /* Build configuration list for PBXNativeTarget "zepto_algorithm" */;
+			buildPhases = (
+				C6B166621CCBF180002041DF /* Sources */,
+				C6B166631CCBF180002041DF /* Frameworks */,
+				C6B166641CCBF180002041DF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = zepto_algorithm;
+			productName = zepto_algorithm;
+			productReference = C6B166661CCBF180002041DF /* zepto_algorithm */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C6B1665E1CCBF180002041DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Boris Tsarev";
+				TargetAttributes = {
+					C6B166651CCBF180002041DF = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = C6B166611CCBF180002041DF /* Build configuration list for PBXProject "zepto_algorithm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C6B1665D1CCBF180002041DF;
+			productRefGroup = C6B166671CCBF180002041DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C6B166651CCBF180002041DF /* zepto_algorithm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6B166621CCBF180002041DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6B166771CCC01A4002041DF /* a_makeHeap.cpp in Sources */,
+				C6B1667D1CCC06DD002041DF /* b_heapSort.cpp in Sources */,
+				C6B166741CCC0187002041DF /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C6B1666B1CCBF180002041DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C6B1666C1CCBF180002041DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C6B1666E1CCBF180002041DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				HEADER_SEARCH_PATHS = "src/**";
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = src;
+				LD_RUNPATH_SEARCH_PATHS = "src/**";
+				LIBRARY_SEARCH_PATHS = "src/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REZ_SEARCH_PATHS = "src/**";
+				USER_HEADER_SEARCH_PATHS = "src/**";
+			};
+			name = Debug;
+		};
+		C6B1666F1CCBF180002041DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				HEADER_SEARCH_PATHS = "src/**";
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = src;
+				LD_RUNPATH_SEARCH_PATHS = "src/**";
+				LIBRARY_SEARCH_PATHS = "src/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REZ_SEARCH_PATHS = "src/**";
+				USER_HEADER_SEARCH_PATHS = "src/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C6B166611CCBF180002041DF /* Build configuration list for PBXProject "zepto_algorithm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6B1666B1CCBF180002041DF /* Debug */,
+				C6B1666C1CCBF180002041DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6B1666D1CCBF180002041DF /* Build configuration list for PBXNativeTarget "zepto_algorithm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6B1666E1CCBF180002041DF /* Debug */,
+				C6B1666F1CCBF180002041DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C6B1665E1CCBF180002041DF /* Project object */;
+}
