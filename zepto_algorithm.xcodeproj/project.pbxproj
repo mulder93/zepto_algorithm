@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C6B166741CCC0187002041DF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6B166731CCC0187002041DF /* main.cpp */; };
+		C65752421CCEA25300FA1762 /* c_heapAndBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C65752401CCEA25300FA1762 /* c_heapAndBoard.cpp */; };
 		C6B166771CCC01A4002041DF /* a_makeHeap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6B166751CCC01A4002041DF /* a_makeHeap.cpp */; };
 		C6B1667D1CCC06DD002041DF /* b_heapSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */; };
 /* End PBXBuildFile section */
@@ -25,12 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C65752401CCEA25300FA1762 /* c_heapAndBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = c_heapAndBoard.cpp; path = src/1_Heap/c_heapAndBoard.cpp; sourceTree = "<group>"; };
 		C6B166661CCBF180002041DF /* zepto_algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = zepto_algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6B166731CCC0187002041DF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C6B166751CCC01A4002041DF /* a_makeHeap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = a_makeHeap.cpp; path = src/1_Heap/a_makeHeap.cpp; sourceTree = "<group>"; };
-		C6B166761CCC01A4002041DF /* a_makeHeap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = a_makeHeap.h; path = src/1_Heap/a_makeHeap.h; sourceTree = "<group>"; };
 		C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = b_heapSort.cpp; path = src/1_Heap/b_heapSort.cpp; sourceTree = "<group>"; };
-		C6B1667C1CCC06DD002041DF /* b_heapSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = b_heapSort.h; path = src/1_Heap/b_heapSort.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +45,6 @@
 		C6B1665D1CCBF180002041DF = {
 			isa = PBXGroup;
 			children = (
-				C6B166731CCC0187002041DF /* main.cpp */,
 				C6B166791CCC01D2002041DF /* src */,
 				C6B166671CCBF180002041DF /* Products */,
 			);
@@ -73,9 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				C6B166751CCC01A4002041DF /* a_makeHeap.cpp */,
-				C6B166761CCC01A4002041DF /* a_makeHeap.h */,
 				C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */,
-				C6B1667C1CCC06DD002041DF /* b_heapSort.h */,
+				C65752401CCEA25300FA1762 /* c_heapAndBoard.cpp */,
 			);
 			name = 1_Heap;
 			sourceTree = "<group>";
@@ -138,7 +134,7 @@
 			files = (
 				C6B166771CCC01A4002041DF /* a_makeHeap.cpp in Sources */,
 				C6B1667D1CCC06DD002041DF /* b_heapSort.cpp in Sources */,
-				C6B166741CCC0187002041DF /* main.cpp in Sources */,
+				C65752421CCEA25300FA1762 /* c_heapAndBoard.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

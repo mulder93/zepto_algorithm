@@ -2,44 +2,53 @@
 //  a_makeHeap.cpp
 //  zepto_algorithm
 //
-//  Created by Boris Tsarev on 23.04.16.
+//  Created by Boris Tsarev on 26.03.16.
 //  Copyright © 2016 Boris Tsarev. All rights reserved.
 //
 
-#include "a_makeHeap.h"
-#include <cstdio>
+#include <iostream>
 #include <cstring>
+#include <vector>
 #include <cmath>
+#include <cstdio>
 
-namespace makeHeap
+struct NumeredString
 {
+    int num;
+    char str[1000];
+};
+using NumeredStringList = std::vector<NumeredString>;
 
-void doTask()
+void doTask1A();
+void heapify(NumeredStringList& list, std::vector<int>& shift);
+void heapify(NumeredStringList& list, std::vector<int>& shift, int index);
+
+//int main(int argc, const char* argv[])
+//{
+//    doTask1A();
+//    return 0;
+//}
+
+void doTask1A()
 {
-    auto input = readInput();
-    std::vector<int> shift(input.size());
-    for (int i = 0; i < shift.size(); ++i) {
+    int inputSize;
+    std::cin >> inputSize;
+
+    NumeredStringList input(inputSize);
+    std::vector<int> shift(inputSize);
+    char buf[1000];
+    for (int i = 0; i < inputSize; ++i) {
+        scanf("%s", buf);
+        strcpy(input[i].str, buf);
+        input[i].num = i;
         shift[i] = i;
     }
 
     heapify(input, shift);
+
     for (auto pos : shift) {
         printf("%d\n", pos + 1);
     }
-}
-
-NumeredStringList readInput()
-{
-    int inputSize;
-    scanf("%d", &inputSize);
-
-    NumeredStringList input(inputSize);
-    for (int i = 0; i < inputSize; ++i) {
-        scanf("%s", input[i].str);
-        input[i].num = i;
-    }
-
-    return input;
 }
 
 void heapify(NumeredStringList& list, std::vector<int>& shift)
@@ -66,6 +75,4 @@ void heapify(NumeredStringList& list, std::vector<int>& shift, int index)
             break;
         }
     }
-}
-
 }
