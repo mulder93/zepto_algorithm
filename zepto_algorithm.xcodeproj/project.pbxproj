@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C65752421CCEA25300FA1762 /* c_heapAndBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C65752401CCEA25300FA1762 /* c_heapAndBoard.cpp */; };
+		C67A2E681CD00414003267EE /* e_segmentColoring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C67A2E671CD00414003267EE /* e_segmentColoring.cpp */; };
 		C6B166771CCC01A4002041DF /* a_makeHeap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6B166751CCC01A4002041DF /* a_makeHeap.cpp */; };
 		C6B1667D1CCC06DD002041DF /* b_heapSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		C65752401CCEA25300FA1762 /* c_heapAndBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = c_heapAndBoard.cpp; path = src/1_Heap/c_heapAndBoard.cpp; sourceTree = "<group>"; };
+		C67A2E671CD00414003267EE /* e_segmentColoring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = e_segmentColoring.cpp; path = src/1_Heap/e_segmentColoring.cpp; sourceTree = "<group>"; };
 		C6B166661CCBF180002041DF /* zepto_algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = zepto_algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B166751CCC01A4002041DF /* a_makeHeap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = a_makeHeap.cpp; path = src/1_Heap/a_makeHeap.cpp; sourceTree = "<group>"; };
 		C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = b_heapSort.cpp; path = src/1_Heap/b_heapSort.cpp; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				C6B166751CCC01A4002041DF /* a_makeHeap.cpp */,
 				C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */,
 				C65752401CCEA25300FA1762 /* c_heapAndBoard.cpp */,
+				C67A2E671CD00414003267EE /* e_segmentColoring.cpp */,
 			);
 			name = 1_Heap;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			files = (
 				C6B166771CCC01A4002041DF /* a_makeHeap.cpp in Sources */,
 				C6B1667D1CCC06DD002041DF /* b_heapSort.cpp in Sources */,
+				C67A2E681CD00414003267EE /* e_segmentColoring.cpp in Sources */,
 				C65752421CCEA25300FA1762 /* c_heapAndBoard.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

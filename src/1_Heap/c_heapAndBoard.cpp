@@ -34,7 +34,11 @@ private:
 private:
     int getParentIndex(size_t index)
     {
-        return std::floor((index - 1) / 2);
+        if (index < 1) {
+            return -1;
+        } else {
+            return std::floor((index - 1) / 2);
+        }
     }
 
     size_t getFirstChildIndex(size_t index)
@@ -271,11 +275,11 @@ void addItem(int value, int itemNum, Heap<BoardItem>& minMItems, Heap<BoardItem>
 void findItem(int value, Heap<BoardItem>& minMItems, std::vector<int>& found);
 void deleteItem(int value, Heap<BoardItem>& minMItems, Heap<BoardItem>& otherItems);
 
-int main(int argc, const char* argv[])
-{
-    doTask1C();
-    return 0;
-}
+//int main(int argc, const char* argv[])
+//{
+//    doTask1C();
+//    return 0;
+//}
 
 void doTask1C()
 {
