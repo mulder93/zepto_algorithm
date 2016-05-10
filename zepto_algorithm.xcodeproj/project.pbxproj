@@ -11,6 +11,7 @@
 		C67A2E681CD00414003267EE /* e_segmentColoring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C67A2E671CD00414003267EE /* e_segmentColoring.cpp */; };
 		C6B166771CCC01A4002041DF /* a_makeHeap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6B166751CCC01A4002041DF /* a_makeHeap.cpp */; };
 		C6B1667D1CCC06DD002041DF /* b_heapSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */; };
+		C6BFE52A1CE270B100459372 /* a_RSQ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6BFE5291CE270B100459372 /* a_RSQ.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		C6B166661CCBF180002041DF /* zepto_algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = zepto_algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B166751CCC01A4002041DF /* a_makeHeap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = a_makeHeap.cpp; path = src/1_Heap/a_makeHeap.cpp; sourceTree = "<group>"; };
 		C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = b_heapSort.cpp; path = src/1_Heap/b_heapSort.cpp; sourceTree = "<group>"; };
+		C6BFE5291CE270B100459372 /* a_RSQ.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = a_RSQ.cpp; path = src/2_Fenwick/a_RSQ.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				C6B1667A1CCC01DB002041DF /* 1_Heap */,
+				C6BFE52B1CE270B800459372 /* 2_Fenwick */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -77,6 +80,14 @@
 				C67A2E671CD00414003267EE /* e_segmentColoring.cpp */,
 			);
 			name = 1_Heap;
+			sourceTree = "<group>";
+		};
+		C6BFE52B1CE270B800459372 /* 2_Fenwick */ = {
+			isa = PBXGroup;
+			children = (
+				C6BFE5291CE270B100459372 /* a_RSQ.cpp */,
+			);
+			name = 2_Fenwick;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 				C6B166771CCC01A4002041DF /* a_makeHeap.cpp in Sources */,
 				C6B1667D1CCC06DD002041DF /* b_heapSort.cpp in Sources */,
 				C67A2E681CD00414003267EE /* e_segmentColoring.cpp in Sources */,
+				C6BFE52A1CE270B100459372 /* a_RSQ.cpp in Sources */,
 				C65752421CCEA25300FA1762 /* c_heapAndBoard.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

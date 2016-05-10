@@ -15,51 +15,51 @@
 
 struct SubSegment
 {
-    unsigned int left;
-    unsigned int right;
-    unsigned int color;
+    int left;
+    int right;
+    int color;
 };
 
 void doTask1E();
 
-int main()
-{
-    doTask1E();
-    return 0;
-}
+//int main()
+//{
+//    doTask1E();
+//    return 0;
+//}
 
 void doTask1E()
 {
-    unsigned int segmentLength;
-    unsigned int subSegmentsCount;
-    scanf("%u %u", &segmentLength, &subSegmentsCount);
+    int segmentLength;
+    int subSegmentsCount;
+    scanf("%d %d", &segmentLength, &subSegmentsCount);
 
     std::vector<SubSegment> subSegments(subSegmentsCount);
-    std::vector<unsigned int> leftSortedSubSegments(subSegmentsCount);
-    std::vector<unsigned int> rightSortedSubSegments(subSegmentsCount);
+    std::vector<int> leftSortedSubSegments(subSegmentsCount);
+    std::vector<int> rightSortedSubSegments(subSegmentsCount);
     for (auto i = 0; i < subSegmentsCount; ++i) {
         SubSegment subSegment;
-        scanf("%u %u %u", &subSegment.left, &subSegment.right, &subSegment.color);
+        scanf("%d %d %d", &subSegment.left, &subSegment.right, &subSegment.color);
         subSegments[i] = std::move(subSegment);
 
         leftSortedSubSegments[i] = i;
         rightSortedSubSegments[i] = i;
     }
 
-    std::sort(leftSortedSubSegments.begin(), leftSortedSubSegments.end(), [&subSegments](unsigned int lhs, unsigned int rhs) {
-        return subSegments[lhs].left <= subSegments[rhs].left;
+    std::sort(leftSortedSubSegments.begin(), leftSortedSubSegments.end(), [&subSegments](int lhs, int rhs) {
+        return subSegments[lhs].left < subSegments[rhs].left;
     });
-    std::sort(rightSortedSubSegments.begin(), rightSortedSubSegments.end(), [&subSegments](unsigned int lhs, unsigned int rhs) {
-        return subSegments[lhs].right <= subSegments[rhs].right;
+    std::sort(rightSortedSubSegments.begin(), rightSortedSubSegments.end(), [&subSegments](int lhs, int rhs) {
+        return subSegments[lhs].right < subSegments[rhs].right;
     });
 
-    std::set<unsigned int, std::greater<unsigned int>> currentSubSegments;
+    std::set<int, std::greater<int>> currentSubSegments;
 
     auto leftIterator = leftSortedSubSegments.begin();
     auto rightIterator = rightSortedSubSegments.begin();
     for (auto i = 0; i < segmentLength; ++i) {
         while (leftIterator != leftSortedSubSegments.end() && subSegments[*leftIterator].left == i) {
-            currentSubSegments.emplace(*leftIterator);
+            currentSubSegments.insert(*leftIterator);
             ++leftIterator;
         }
 
@@ -69,7 +69,7 @@ void doTask1E()
         }
 
         if (currentSubSegments.size() > 0) {
-            printf("%u", subSegments[*currentSubSegments.begin()].color);
+            printf("%d", subSegments[*currentSubSegments.begin()].color);
         } else {
             printf("0");
         }
