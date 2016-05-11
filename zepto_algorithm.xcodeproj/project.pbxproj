@@ -12,6 +12,7 @@
 		C6B166771CCC01A4002041DF /* a_makeHeap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6B166751CCC01A4002041DF /* a_makeHeap.cpp */; };
 		C6B1667D1CCC06DD002041DF /* b_heapSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */; };
 		C6BFE52A1CE270B100459372 /* a_RSQ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6BFE5291CE270B100459372 /* a_RSQ.cpp */; };
+		F33269021CDC930E00ED8E0E /* f_pNumbers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33269011CDC930E00ED8E0E /* f_pNumbers.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,7 @@
 		C6B166751CCC01A4002041DF /* a_makeHeap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = a_makeHeap.cpp; path = src/1_Heap/a_makeHeap.cpp; sourceTree = "<group>"; };
 		C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = b_heapSort.cpp; path = src/1_Heap/b_heapSort.cpp; sourceTree = "<group>"; };
 		C6BFE5291CE270B100459372 /* a_RSQ.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = a_RSQ.cpp; path = src/2_Fenwick/a_RSQ.cpp; sourceTree = "<group>"; };
+		F33269011CDC930E00ED8E0E /* f_pNumbers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = f_pNumbers.cpp; path = src/1_Heap/f_pNumbers.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				C6B1667B1CCC06DD002041DF /* b_heapSort.cpp */,
 				C65752401CCEA25300FA1762 /* c_heapAndBoard.cpp */,
 				C67A2E671CD00414003267EE /* e_segmentColoring.cpp */,
+				F33269011CDC930E00ED8E0E /* f_pNumbers.cpp */,
 			);
 			name = 1_Heap;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6B166771CCC01A4002041DF /* a_makeHeap.cpp in Sources */,
+				F33269021CDC930E00ED8E0E /* f_pNumbers.cpp in Sources */,
 				C6B1667D1CCC06DD002041DF /* b_heapSort.cpp in Sources */,
 				C67A2E681CD00414003267EE /* e_segmentColoring.cpp in Sources */,
 				C6BFE52A1CE270B100459372 /* a_RSQ.cpp in Sources */,
