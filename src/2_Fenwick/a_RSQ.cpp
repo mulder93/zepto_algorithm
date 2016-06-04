@@ -54,11 +54,11 @@ enum QueryType
 
 void doTask2A();
 
-int main()
-{
-    doTask2A();
-    return 0;
-}
+//int main()
+//{
+//    doTask2A();
+//    return 0;
+//}
 
 void doTask2A()
 {

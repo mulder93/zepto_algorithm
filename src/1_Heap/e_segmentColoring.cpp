@@ -12,6 +12,7 @@
 #include <cstdio>
 #include <unordered_map>
 #include <cmath>
+#include <functional>
 
 struct SubSegment
 {

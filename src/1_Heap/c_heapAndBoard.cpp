@@ -12,6 +12,7 @@
 #include <cstdlib>
 #include <functional>
 #include <cmath>
+#include <cctype>
 
 const int MAX_COMMAND_LENGTH = 20;
 const int M = 5;

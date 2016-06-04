@@ -11,6 +11,7 @@
 #include <vector>
 #include <queue>
 #include <algorithm>
+#include <functional>
 
 struct GeneratorItem
 {
@@ -39,11 +40,11 @@ struct GeneratorItem
 
 void doTaskF();
 
-int main()
-{
-    doTaskF();
-    return 0;
-}
+//int main()
+//{
+//    doTaskF();
+//    return 0;
+//}
 
 void doTaskF()
 {
