@@ -33,3 +33,6 @@
 project.xcworkspace/
 xcuserdata/
 *.xcuserdatad/
+
+# Visual Studio
+*.sdf

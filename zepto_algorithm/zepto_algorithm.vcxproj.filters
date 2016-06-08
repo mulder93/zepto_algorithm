@@ -51,5 +51,8 @@
     <ClCompile Include="..\src\2_Fenwick\f_rectangles.cpp">
       <Filter>Source Files\2_Fenwick</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\2_Fenwick\b_segmentUpdates.cpp">
+      <Filter>Source Files\2_Fenwick</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

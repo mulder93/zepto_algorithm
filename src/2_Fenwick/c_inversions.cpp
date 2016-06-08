@@ -1,75 +1,72 @@
-#include <vector>
 #include <cstdio>
-#include <map>
+#include <climits>
+#include <algorithm>
+#include <vector>
 
-class FenwickTreeCount
+template<typename DataType, typename SumType = DataType>
+class FenwickSumTree
 {
 private:
-	std::vector<std::map<int, int>> m_data;
+	std::vector<SumType> m_data;
 
 public:
-	FenwickTreeCount(size_t size) : m_data(size)
+	FenwickSumTree(size_t size) : m_data(size, 0)
 	{
 	}
 
-	void set(size_t pos, int value)
+	void inc(int pos, DataType value)
 	{
 		for (; pos < m_data.size(); pos |= (pos + 1)) {
-			if (m_data[pos].find(value) != m_data[pos].end()) {
-				++m_data[pos][value];
-			} else {
-				m_data[pos][value] = 1;
-			}
+			m_data[pos] += value;
 		}
 	}
 
-	int countLowerThan(int pos, int value)
+	SumType sum(DataType pos)
 	{
-		int count = 0;
+		SumType result = 0;
 		for (; pos >= 0; pos = (pos & (pos + 1)) - 1) {
-			for (auto pair : m_data[pos]) {
-				if (pair.first < value) {
-					count += pair.second;
-				} else {
-					break;
-				}
-			}
+			result += m_data[pos];
 		}
-		return count;
+		return result;
 	}
 
-	int countLowerThan(int left, int right, int value)
+	SumType sum(int left, int right)
 	{
-		return countLowerThan(right, value) - countLowerThan(left - 1, value);
+		return sum(right) - sum(left - 1);
+	}
+
+	DataType getValue(int pos)
+	{
+		return static_cast<DataType>(sum(pos) - sum(pos - 1));
+	}
+
+	void setValue(int pos, DataType value)
+	{
+		inc(pos, value - getValue(pos));
 	}
 };
 
-void doTask2C();
+void doTask2C()
+{
+	size_t dataSize;
+	scanf("%d", &dataSize);
+
+	const int maxValue = 1000000;
+
+	FenwickSumTree<int> data(maxValue + 1);
+	auto value = 0;
+	long long inverstionsCount = 0;
+	for (auto i = 0; i < dataSize; ++i) {
+		scanf("%d", &value);
+		data.inc(maxValue - value, 1);
+		inverstionsCount += data.sum(maxValue - value - 1);
+	}
+
+	printf("%I64d", inverstionsCount);
+}
 
 //int main()
 //{
 //	doTask2C();
 //	return 0;
 //}
-
-void doTask2C()
-{
-	int dataSize;
-	scanf("%d", &dataSize);
-
-	std::vector<int> data(dataSize);
-	FenwickTreeCount tree(dataSize);
-	for (auto i = 0; i < dataSize; ++i) {
-		int value;
-		scanf("%d", &value);
-		data[i] = value;
-		tree.set(i, value);
-	}
-
-	long long inversionsCount = 0;
-	for (auto i = 0; i < dataSize - 1; ++i) {
-		inversionsCount += tree.countLowerThan(i + 1, dataSize - 1, data[i]);
-	}
-
-	printf("%I64d\n", inversionsCount);
-}

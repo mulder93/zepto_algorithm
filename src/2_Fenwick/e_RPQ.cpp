@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <vector>
 
-class FenwickTreeProduct
+class FenwickProductTree
 {
 private:
 	std::vector<int> m_data;
@@ -15,7 +15,7 @@ private:
 	}
 
 public:
-	FenwickTreeProduct(size_t size, int module) : m_data(size, 1), m_tree(size, 1), m_module(module)
+	FenwickProductTree(size_t size, int module) : m_data(size, 1), m_tree(size, 1), m_module(module)
     {
     }
 
@@ -59,36 +59,32 @@ enum QueryType
     Product = 2
 };
 
-void doTask2E();
+void doTask2E()
+{
+    size_t dataSize;
+    int queryCount;
+	int module;
+    scanf("%d %d %d", &dataSize, &queryCount, &module);
+
+	FenwickProductTree data(dataSize, module);
+	QueryType queryType = QueryType::Multiply;
+	int x = 0;
+	int y = 0;
+
+    for (auto i = 0; i < queryCount; ++i) {
+        scanf("%d", &queryType);
+        if (queryType == QueryType::Multiply) {
+			scanf("%d %d", &x, &y);
+			data.multiply(x - 1, y);
+        } else if (queryType == QueryType::Product) {
+			scanf("%d %d", &x, &y);
+			printf("%d\n", data.product(x - 1, y - 1));
+        }
+    }
+}
 
 //int main()
 //{
 //    doTask2E();
 //    return 0;
 //}
-
-void doTask2E()
-{
-    int dataSize;
-    int queryCount;
-	int module;
-    scanf("%d %d %d", &dataSize, &queryCount, &module);
-
-    FenwickTreeProduct data(dataSize, module);
-    for (auto i = 0; i < queryCount; ++i) {
-        QueryType queryType;
-        scanf("%d", &queryType);
-
-        if (queryType == QueryType::Multiply) {
-			int pos;
-			int value;
-			scanf("%d %d", &pos, &value);
-			data.multiply(pos - 1, value);
-        } else if (queryType == QueryType::Product) {
-			int left;
-			int right;
-			scanf("%d %d", &left, &right);
-			printf("%d\n", data.product(left - 1, right - 1));
-        }
-    }
-}
