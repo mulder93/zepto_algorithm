@@ -165,8 +165,8 @@ void doTask2F()
 	}
 }
 
-int main()
-{
-	doTask2F();
-	return 0;
-}
+//int main()
+//{
+//	doTask2F();
+//	return 0;
+//}

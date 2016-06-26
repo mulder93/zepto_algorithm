@@ -35,4 +35,6 @@ xcuserdata/
 *.xcuserdatad/
 
 # Visual Studio
-*.sdf
+*.opensdf
+.vs/
+Debug/
