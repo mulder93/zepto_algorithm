@@ -144,8 +144,8 @@ void doTask3B()
 	}
 }
 
-int main()
-{
-	doTask3B();
-	return 0;
-}
+//int main()
+//{
+//	doTask3B();
+//	return 0;
+//}

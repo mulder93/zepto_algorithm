@@ -134,6 +134,7 @@
     <ClCompile Include="..\src\2_Fenwick\f_rectangles.cpp" />
     <ClCompile Include="..\src\3_Sparce_Sqrt\a_staticRMQ.cpp" />
     <ClCompile Include="..\src\3_Sparce_Sqrt\b_treeParents.cpp" />
+    <ClCompile Include="..\src\3_Sparce_Sqrt\c_dynamicRMQ.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
