@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 
-class SparceMinTable
+class SparseMinTable
 {
 	using Vector = std::vector<int>;
 	using Vector2D = std::vector<Vector>;
@@ -15,7 +15,7 @@ private:
 	Vector m_twoPowers;
 
 public:
-	SparceMinTable(const Vector& data) : m_width(data.size()), m_numbersToTwoPower(data.size() + 1, 0)
+	SparseMinTable(const Vector& data) : m_width(data.size()), m_numbersToTwoPower(data.size() + 1, 0)
 	{
 		calcPowers();
 		calcHeigth();
@@ -107,7 +107,7 @@ void doTask3A()
 	}
 
 	// Construct sparse table
-	SparceMinTable table(std::move(data));
+	SparseMinTable table(std::move(data));
 
 	// Read first query
 	auto queryLeft = 0;

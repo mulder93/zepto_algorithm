@@ -3,7 +3,7 @@
 #include <cmath>
 #include <algorithm>
 
-class SparceTree
+class SparseTree
 {
 	using Vector = std::vector<int>;
 	using Vector2D = std::vector<Vector>;
@@ -25,7 +25,7 @@ public:
 	static const int NO_PARENT = -1;
 
 public:
-	SparceTree(const Vector& data) : m_width(data.size())
+	SparseTree(const Vector& data) : m_width(data.size())
 	{
 		calcPowers();
 		calcHeigth();
@@ -128,11 +128,11 @@ void doTask3B()
 
 	// Read tree
 	std::vector<int> data(nodeCount + 1);
-	data[0] = SparceTree::NO_PARENT;
+	data[0] = SparseTree::NO_PARENT;
 	for (auto i = 1; i < data.size() - 1; ++i) {
 		scanf("%d", &data[i]);
 	}
-	SparceTree tree(data);
+	SparseTree tree(data);
 
 	// Queries
 	auto node = 0;

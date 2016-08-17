@@ -10,28 +10,67 @@ public:
 	RootHeuristicMin(std::vector<int> data) : m_data(std::move(data)), m_blockSize(0), m_blockMask(0)
 	{
 		initBlocks();
-		calcBlockMask();
 	}
 
 	void set(int pos, int value)
 	{
-		m_data[pos] = value;
-		m_blocks[getBlockIndex(pos)] = { std::min(value, m_blocks[getBlockIndex(pos)].min), false };
+		auto blockIndex = getBlockIndex(pos);
+		auto& block = m_blocks[blockIndex];
+
+		switch (block.state) {
+			case BlockState::DirtyData:
+				updateBlockData(block);
+				m_data[pos] = value;
+				block.value = std::min(block.value, value);
+				break;
+
+			case BlockState::DirtyBlock:
+				m_data[pos] = value;
+				break;
+
+			case BlockState::Normal:
+				m_data[pos] = value;
+				if (value > block.value) {
+					block.state = BlockState::DirtyBlock;
+				} else {
+					block.value = value;
+				}
+				break;
+		}
 	}
 
 	void set(int left, int right, int value)
 	{
-
+		for (auto i = left; i <= right;) {
+			if (isBlockStart(i) && i + m_blockSize - 1 <= right) {
+				auto& block = m_blocks[getBlockIndex(i)];
+				block.value = value;
+				block.state = BlockState::DirtyData;
+				i += m_blockSize;
+			} else {
+				set(i, value);
+				++i;
+			}
+		}
 	}
 
 	int getMin(int left, int right)
 	{
 		auto result = INT_MAX;
 		for (auto i = left; i <= right;) {
+			auto blockIndex = getBlockIndex(i);
+			auto& block = m_blocks[blockIndex];
+
 			if (isBlockStart(i) && i + m_blockSize - 1 <= right) {
-				result = std::min(result, m_blocks[getBlockIndex(i)].min);
+				if (block.state == BlockState::DirtyBlock) {
+					updateBlock(block);
+				}
+				result = std::min(result, block.value);
 				i += m_blockSize;
 			} else {
+				if (block.state == BlockState::DirtyData) {
+					updateBlockData(block);
+				}
 				result = std::min(result, m_data[i]);
 				++i;
 			}
@@ -53,6 +92,22 @@ public:
 	}
 
 private:
+	enum class BlockState
+	{
+		Normal,
+		DirtyData,
+		DirtyBlock
+	};
+
+	struct Block
+	{
+		int value;
+		int index;
+		BlockState state;
+
+		Block(int value, int index, BlockState state) : value(value), index(index), state(state) { }
+	};
+
 	void initBlocks()
 	{
 		if (m_data.size() > 0) {
@@ -60,14 +115,34 @@ private:
 			m_blockTwoPower = std::floor(std::log2(sqrt));
 			m_blockSize = std::pow(2, m_blockTwoPower);
 		}
-		
-		for (auto i = 0; i < m_data.size(); i += m_blockSize) {
-			auto blockMin = INT_MAX;
-			for (auto j = i; j < i + m_blockSize && j < m_data.size(); ++j) {
-				blockMin = std::min(blockMin, m_data[j]);
-			}
-			m_blocks.push_back({ blockMin, false });
+
+		auto extraBlock = (m_data.size() % m_blockSize != 0);
+		auto blocksCount = (m_data.size() / m_blockSize) + (extraBlock ? 1 : 0);
+
+		for (auto i = 0; i < blocksCount; ++i) {
+			m_blocks.emplace_back(INT_MAX, i, BlockState::DirtyBlock);
 		}
+
+		calcBlockMask();
+	}
+
+	void updateBlock(Block& block)
+	{
+		auto startPos = block.index * m_blockSize;
+		block.value = INT_MAX;
+		for (auto i = startPos; i < startPos + m_blockSize && i < m_data.size(); ++i) {
+			block.value = std::min(block.value, m_data[i]);
+		}
+		block.state = BlockState::Normal;
+	}
+
+	void updateBlockData(Block& block)
+	{
+		auto startPos = block.index * m_blockSize;
+		for (auto i = startPos; i < startPos + m_blockSize && i < m_data.size(); ++i) {
+			m_data[i] = m_blocks[block.index].value;
+		}
+		block.state = BlockState::Normal;
 	}
 
 	void calcBlockMask()
@@ -90,13 +165,6 @@ private:
 		return (pos >> m_blockTwoPower);
 	}
 
-private:
-	struct Block
-	{
-		int min;
-		bool dirty;
-	};
-
 	std::vector<int> m_data;
 	std::vector<Block> m_blocks;
 	int m_blockSize;
@@ -104,18 +172,44 @@ private:
 	int m_blockTwoPower;
 };
 
+enum QueryType
+{
+	GetMin = 1,
+	Set = 2
+};
+
 void doTask3C()
 {
-	RootHeuristicMin rootHeuristic({ 3, 5, 3, 6, 7, 4, 3, 5, 7, 7, 1, 7, 12, 5, 7, 1, 0 });
-	rootHeuristic.print();
-	printf("Min 0 - 16: %d", rootHeuristic.getMin(0, 16));
+	auto dataSize = 0;
+	scanf("%d", &dataSize);
 
-	auto stop = 0;
-	scanf("%d", &stop);
+	std::vector<int> data(dataSize);
+	for (auto i = 0; i < dataSize; ++i) {
+		scanf("%d", &data[i]);
+	}
+
+	RootHeuristicMin rootHeuristic(data);
+	
+	auto queryCount = 0;
+	scanf("%d", &queryCount);
+
+	auto queryType = 0;
+	auto left = 0;
+	auto right = 0;
+	auto value = 0;
+	for (auto i = 0; i < queryCount; ++i) {
+		scanf("%d %d %d", &queryType, &left, &right);
+		if (queryType == GetMin) {
+			printf("%d\n", rootHeuristic.getMin(left - 1, right - 1));
+		} else {
+			scanf("%d", &value);
+			rootHeuristic.set(left - 1, right - 1, value);
+		}
+	}
 }
 
-int main()
-{
-	doTask3C();
-	return 0;
-}
+//int main()
+//{
+//	doTask3C();
+//	return 0;
+//}

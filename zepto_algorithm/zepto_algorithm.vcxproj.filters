@@ -19,6 +19,9 @@
     <Filter Include="Source Files\2_Fenwick">
       <UniqueIdentifier>{5f8ad0bf-5490-450a-9005-cd3accb7f126}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\3_Sparse_Sqrt">
+      <UniqueIdentifier>{45b8943a-2aaf-4f38-83d9-f8a46d6c831c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\1_Heap\a_makeHeap.cpp">
@@ -55,13 +58,16 @@
       <Filter>Source Files\2_Fenwick</Filter>
     </ClCompile>
     <ClCompile Include="..\src\3_Sparce_Sqrt\a_staticRMQ.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\3_Sparse_Sqrt</Filter>
     </ClCompile>
     <ClCompile Include="..\src\3_Sparce_Sqrt\b_treeParents.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\3_Sparse_Sqrt</Filter>
     </ClCompile>
     <ClCompile Include="..\src\3_Sparce_Sqrt\c_dynamicRMQ.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\3_Sparse_Sqrt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\3_Sparce_Sqrt\e_persistentStack.cpp">
+      <Filter>Source Files\3_Sparse_Sqrt</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
