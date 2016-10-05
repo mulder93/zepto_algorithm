@@ -136,6 +136,8 @@
     <ClCompile Include="..\src\3_Sparce_Sqrt\b_treeParents.cpp" />
     <ClCompile Include="..\src\3_Sparce_Sqrt\c_dynamicRMQ.cpp" />
     <ClCompile Include="..\src\3_Sparce_Sqrt\e_persistentStack.cpp" />
+    <ClCompile Include="..\src\4_Hash\a_antiQuickSort.cpp" />
+    <ClCompile Include="..\src\4_Hash\b_orderStatistics.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

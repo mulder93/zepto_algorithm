@@ -22,6 +22,9 @@
     <Filter Include="Source Files\3_Sparse_Sqrt">
       <UniqueIdentifier>{45b8943a-2aaf-4f38-83d9-f8a46d6c831c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\4_Hash">
+      <UniqueIdentifier>{fb81d547-fb80-4046-930e-4be4bf9f8e3f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\1_Heap\a_makeHeap.cpp">
@@ -68,6 +71,12 @@
     </ClCompile>
     <ClCompile Include="..\src\3_Sparce_Sqrt\e_persistentStack.cpp">
       <Filter>Source Files\3_Sparse_Sqrt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\4_Hash\a_antiQuickSort.cpp">
+      <Filter>Source Files\4_Hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\4_Hash\b_orderStatistics.cpp">
+      <Filter>Source Files\4_Hash</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

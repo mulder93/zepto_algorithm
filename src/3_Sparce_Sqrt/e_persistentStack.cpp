@@ -52,8 +52,8 @@ void doTask3E()
 	}
 }
 
-int main()
+/*int main()
 {
 	doTask3E();
 	return 0;
-}
+}*/
