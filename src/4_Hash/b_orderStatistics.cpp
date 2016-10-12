@@ -4,44 +4,42 @@
 #include <vector>
 #include <utility>
 
-int quickSortRandomPartition(std::vector<int>& data, int left, int right)
+int quickSortRandomPartition(std::vector<int>& data, const int left, const int right)
 {
-	auto size = right - left + 1;
-	auto pivot = rand() % size;
-	auto pivotValue = data[left + pivot];
+	const auto size = right - left + 1;
+	auto pivotPos = left + rand() % size;
 
-	auto i = left;
-	auto j = right;
-	while (i <= j) {
-		while (data[i] < pivotValue) {
-			++i;
+	std::swap(data[pivotPos], data[right]);
+	pivotPos = right;
+	const auto pivotValue = data[pivotPos];
+
+	auto leftCursor = left - 1;
+	auto rightCursor = left;
+	
+	while (rightCursor < pivotPos) {
+		if (data[rightCursor] <= pivotValue) {
+			++leftCursor;
+			std::swap(data[leftCursor], data[rightCursor]);
 		}
-		while (data[j] > pivotValue) {
-			--j;
-		}
-		if (i <= j) {
-			std::swap(data[i], data[j]);
-			++i;
-			--j;
-		}
+		++rightCursor;
 	}
 
-	return i - 1 - left;
+	std::swap(data[leftCursor + 1], data[pivotPos]);
+	return leftCursor + 1;
 }
 
-int getKth(std::vector<int>& data, int k)
+int getKth(std::vector<int>& data, const int k)
 {
 	auto left = 0;
 	auto right = data.size() - 1;
 	while (true) {
-		int pivotPos = quickSortRandomPartition(data, left, right);
+		const int pivotPos = quickSortRandomPartition(data, left, right);
 		if (k == pivotPos) {
-			return data[left + pivotPos];
+			return data[pivotPos];
 		} else if (k < pivotPos) {
-			right = left + pivotPos - 1;
+			right = pivotPos - 1;
 		} else {
-			left += pivotPos + 1;
-			k -= (pivotPos + 1);
+			left = pivotPos + 1;
 		}
 	}
 }
@@ -70,8 +68,8 @@ void doTask4B()
 		printf("%d\n", getKth(dataPart, k - 1));
 	}
 
-	//auto stop = 0;
-	//scanf("%d", &stop);
+	auto stop = 0;
+	scanf("%d", &stop);
 }
 
 int main()
