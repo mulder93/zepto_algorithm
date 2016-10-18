@@ -72,8 +72,8 @@ void doTask4B()
 	scanf("%d", &stop);
 }
 
-int main()
+/*int main()
 {
 	doTask4B();
 	return 0;
-}
+}*/

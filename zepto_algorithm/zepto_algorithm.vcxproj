@@ -138,6 +138,7 @@
     <ClCompile Include="..\src\3_Sparce_Sqrt\e_persistentStack.cpp" />
     <ClCompile Include="..\src\4_Hash\a_antiQuickSort.cpp" />
     <ClCompile Include="..\src\4_Hash\b_orderStatistics.cpp" />
+    <ClCompile Include="..\src\4_Hash\c_hashTable.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
