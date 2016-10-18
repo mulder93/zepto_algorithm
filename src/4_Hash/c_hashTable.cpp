@@ -40,11 +40,11 @@ public:
 	HashTable() :
 		m_tableSizePower(DEFAULT_TABLE_SIZE_POWER),
 		m_tableSize(std::pow(2, m_tableSizePower)),
-		m_data(m_tableSize),
+		m_data(m_tableSize, nullptr),
 		m_itemsCount(0)
 	{
 		m_maxItemsCount = m_tableSize * ITEMS_COUNT_MAX_THRESHOLD;
-		m_minItemsCount = m_tableSize * ITEMS_COUNT_MIN_THRESHOLD;
+		m_minItemsCount = std::pow(2, m_tableSizePower - 1) * ITEMS_COUNT_MIN_THRESHOLD;
 	}
 
 	void put(long long key, long long value)
@@ -109,7 +109,7 @@ public:
 				delete item;
 				--m_itemsCount;
 
-				if (m_itemsCount <= ITEMS_COUNT_MAX_THRESHOLD) {
+				if (m_itemsCount <= m_minItemsCount && m_tableSizePower > DEFAULT_TABLE_SIZE_POWER) {
 					resize();
 				}
 
@@ -149,16 +149,19 @@ private:
 		}
 		
 		m_maxItemsCount = m_tableSize * ITEMS_COUNT_MAX_THRESHOLD;
-		m_minItemsCount = m_tableSize * ITEMS_COUNT_MIN_THRESHOLD;
+		m_minItemsCount = std::pow(2, m_tableSizePower - 1) * ITEMS_COUNT_MIN_THRESHOLD;
 		m_itemsCount = 0;
 
 		auto oldTable = std::vector<Item*>(m_data.begin(), m_data.end());
-		m_data = std::vector<Item*>(m_tableSize);
+		m_data = std::vector<Item*>(m_tableSize, nullptr);
 
+		Item* prevItem = nullptr;
 		for (auto item : oldTable) {
 			while (item) {
 				put(item->key, item->value);
+				prevItem = item;
 				item = item->next;
+				delete prevItem;
 			}
 		}
 	}
@@ -167,8 +170,8 @@ private:
 	const long long W_BIT = 4294967295;
 	const unsigned int HASH_INDEX = 2654435769;
 
-	const double ITEMS_COUNT_MAX_THRESHOLD = 0.75;
-	const double ITEMS_COUNT_MIN_THRESHOLD = 0.5;
+	const double ITEMS_COUNT_MAX_THRESHOLD = 1.3;
+	const double ITEMS_COUNT_MIN_THRESHOLD = 1.0;
 
 	int m_tableSizePower;
 	int m_tableSize;
