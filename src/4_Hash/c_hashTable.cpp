@@ -6,6 +6,7 @@
 #include <iostream>
 #include <algorithm>
 #include <memory>
+#include <cmath>
 
 const long long MUL = 1901LL;
 const long long ADD = 94418953LL;
@@ -36,7 +37,11 @@ inline int rnd(int n)
 class HashTable
 {
 public:
-	HashTable() : m_tableSize(DEFAULT_TABLE_SIZE), m_data(DEFAULT_TABLE_SIZE), m_itemsCount(0)
+	HashTable() :
+		m_tableSizePower(DEFAULT_TABLE_SIZE_POWER),
+		m_tableSize(std::pow(2, m_tableSizePower)),
+		m_data(m_tableSize),
+		m_itemsCount(0)
 	{
 		m_maxItemsCount = m_tableSize * ITEMS_COUNT_MAX_THRESHOLD;
 		m_minItemsCount = m_tableSize * ITEMS_COUNT_MIN_THRESHOLD;
@@ -127,16 +132,20 @@ private:
 
 	int getHash(long long key)
 	{
-		int hash = std::floor(m_tableSize * std::fmod(HASH_MULTIPLIER * key, 1.0));
-		return hash;
+		long long r0 = key * HASH_INDEX;
+		return ((r0 & W_BIT) >> (32 - m_tableSizePower));
+		//int hash = std::floor(m_tableSize * std::fmod(HASH_MULTIPLIER * key, 1.0));
+		//return hash;
 	}
 
 	void resize()
 	{
 		if (m_itemsCount >= m_maxItemsCount) {
 			m_tableSize *= 2;
+			++m_tableSizePower;
 		} else {
 			m_tableSize /= 2;
+			--m_tableSizePower;
 		}
 		
 		m_maxItemsCount = m_tableSize * ITEMS_COUNT_MAX_THRESHOLD;
@@ -154,11 +163,14 @@ private:
 		}
 	}
 
-	const double HASH_MULTIPLIER = 0.618;
-	const int DEFAULT_TABLE_SIZE = 128;
+	const int DEFAULT_TABLE_SIZE_POWER = 7;
+	const long long W_BIT = 4294967295;
+	const unsigned int HASH_INDEX = 2654435769;
+
 	const double ITEMS_COUNT_MAX_THRESHOLD = 0.75;
 	const double ITEMS_COUNT_MIN_THRESHOLD = 0.5;
 
+	int m_tableSizePower;
 	int m_tableSize;
 	std::vector<Item*> m_data;
 
