@@ -223,8 +223,8 @@ void doTask4C()
 	//scanf("%d", &stop);
 }
 
-int main()
+/*int main()
 {
 	doTask4C();
 	return 0;
-}
+}*/

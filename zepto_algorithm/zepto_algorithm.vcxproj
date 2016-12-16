@@ -139,6 +139,10 @@
     <ClCompile Include="..\src\4_Hash\a_antiQuickSort.cpp" />
     <ClCompile Include="..\src\4_Hash\b_orderStatistics.cpp" />
     <ClCompile Include="..\src\4_Hash\c_hashTable.cpp" />
+    <ClCompile Include="..\src\5_Contest_1\a_segments.cpp" />
+    <ClCompile Include="..\src\5_Contest_1\b_monitor.cpp" />
+    <ClCompile Include="..\src\5_Contest_1\c_cola.cpp" />
+    <ClCompile Include="..\src\6_Sort\a_lines.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

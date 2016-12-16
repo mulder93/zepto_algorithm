@@ -25,6 +25,12 @@
     <Filter Include="Source Files\4_Hash">
       <UniqueIdentifier>{fb81d547-fb80-4046-930e-4be4bf9f8e3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\5_Contest_1">
+      <UniqueIdentifier>{d342133f-75eb-4e08-9a56-0521d57000b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\6_Sort">
+      <UniqueIdentifier>{a14e285e-179d-4669-a20f-57a485efba44}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\1_Heap\a_makeHeap.cpp">
@@ -80,6 +86,18 @@
     </ClCompile>
     <ClCompile Include="..\src\4_Hash\c_hashTable.cpp">
       <Filter>Source Files\4_Hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\5_Contest_1\a_segments.cpp">
+      <Filter>Source Files\5_Contest_1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\5_Contest_1\b_monitor.cpp">
+      <Filter>Source Files\5_Contest_1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\5_Contest_1\c_cola.cpp">
+      <Filter>Source Files\5_Contest_1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\6_Sort\a_lines.cpp">
+      <Filter>Source Files\6_Sort</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
