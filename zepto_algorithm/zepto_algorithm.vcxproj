@@ -143,6 +143,7 @@
     <ClCompile Include="..\src\5_Contest_1\b_monitor.cpp" />
     <ClCompile Include="..\src\5_Contest_1\c_cola.cpp" />
     <ClCompile Include="..\src\6_Sort\a_lines.cpp" />
+    <ClCompile Include="..\src\6_Sort\b_points.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

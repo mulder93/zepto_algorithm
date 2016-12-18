@@ -40,8 +40,8 @@ void doTask6A()
 	scanf("%d", &stop);*/
 }
 
-int main()
-{
-	doTask6A();
-	return 0;
-}
+//int main()
+//{
+//	doTask6A();
+//	return 0;
+//}
