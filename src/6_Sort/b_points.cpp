@@ -12,6 +12,9 @@ struct SegmentEvent
 
 	long long coord;
 	Type type;
+
+	SegmentEvent(long long coord, Type type) : coord(coord), type(type) { }
+	SegmentEvent() : coord(0), type(Type::Start) { }
 };
 
 void doTask6B()
@@ -58,31 +61,36 @@ void doTask6B()
 	int goodThreshold = 0;
 	scanf("%d", &goodThreshold);
 
+	// Merge segments
+	std::vector<SegmentEvent> mergedEvents;
+	int overlapCount = 0;
+	for (auto& event : events) {
+		if (event.type == SegmentEvent::Type::Start) {
+			++overlapCount;
+			if (overlapCount == goodThreshold) {
+				mergedEvents.push_back(event);
+			}
+		} else {
+			if (overlapCount == goodThreshold) {
+				mergedEvents.push_back(event);
+			}
+			--overlapCount;
+		}
+	}
+
 	// Main algorithm
-	int overlapSegmentsCount = 0;
 	int goodPointsCount = 0;
 	auto pointIterator = points.begin();
-	for (int eventIndex = 0; eventIndex < events.size(); ++eventIndex) {
-		auto& event = events[eventIndex];
+	for (auto& event : mergedEvents) {
 		if (event.type == SegmentEvent::Type::Start) {
-			if (overlapSegmentsCount < goodThreshold) {
-				while (pointIterator != points.end() && *pointIterator < event.coord) {
-					++pointIterator;
-				}
+			while (pointIterator != points.end() && *pointIterator < event.coord) {
+				++pointIterator;
 			}
-			++overlapSegmentsCount;
-		} else { //SegmentEvent::Type::End
-			if (overlapSegmentsCount < goodThreshold) {
-				while (pointIterator != points.end() && *pointIterator <= event.coord) {
-					++pointIterator;
-				}
-			} else if (overlapSegmentsCount == goodThreshold) {
-				while (pointIterator != points.end() && *pointIterator <= event.coord) {
-					++pointIterator;
-					++goodPointsCount; // !!!
-				}
+		} else {
+			while (pointIterator != points.end() && *pointIterator <= event.coord) {
+				++pointIterator;
+				++goodPointsCount;
 			}
-			--overlapSegmentsCount;
 		}
 	}
 
